@@ -222,7 +222,6 @@ console.log(bTree.getSize());
 console.log(bTree.toArray());
 
 // modify the tree to make it balanced
-
 var newTree = bTree.balanceTree();
 console.log(newTree);
 console.log(newTree.findNode(1));
