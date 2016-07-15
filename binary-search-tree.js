@@ -107,7 +107,7 @@ BinaryTree.prototype = {
         }
 
         // if the node is not found, return a message
-        if (searchNode == false) {
+        if (searchNode === false) {
 
             searchPath = "The node with the value of " + value + " has not been found!";
         }
@@ -180,25 +180,20 @@ BinaryTree.prototype = {
 
                 var arrayMiddle = Math.floor(arrayLength / 2),
                     midPoint = sortedArray[arrayMiddle],
-                    
                     leftHalf = sortedArray.slice(0, arrayMiddle),
                     leftLength = leftHalf.length,
                     leftMiddle = Math.floor(leftLength / 2),
                     leftPoint = leftHalf[leftMiddle],
-                    
                     rightHalf = sortedArray.slice(arrayMiddle + 1, arrayLength),
                     rightLength = rightHalf.length,
                     rightMiddle = Math.floor(rightLength / 2),
                     rightPoint = rightHalf[rightMiddle];
-
                 balancedTree.addNode(midPoint);
-                // balancedTree.addNode(leftPoint);
-                // balancedTree.addNode(rightPoint);
-
                 buildTree(leftHalf, leftLength);
                 buildTree(rightHalf, rightLength);
             }
         }
+
         buildTree(sortedArray, arrayLength);
         return balancedTree;
     }
